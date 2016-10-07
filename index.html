@@ -1,10 +1,35 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
   <title>BadSector.tv</title>
-  <link rel="stylesheet" href="styles.css" type="text/css" />
-  <script src="badsectortv.js"></script>
+  <style>
+    html,
+    body {
+      height: 100vh;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var style = document.createElement('style'),
+          head = document.head,
+          screen = null,
+          screen1 = "images/OVlFjmEDhx9rG.gif",
+          screen2 = "images/riw3K0D2h4klG.gif";
+      style.type = "text/css";
+      var picker = setInterval(function(){
+        var number = Math.floor(Math.random() * 10);
+        if (number < 6){
+          screen = screen1;
+        } else {
+          screen = screen2;
+        }
+        style.innerHTML = "body { background: url(" + screen + ") center center no-repeat #000; background-size: cover;}";
+      }, 1000);
+      head.appendChild(style);
+    }
+  </script>
 </head>
 <body>
 </body>
